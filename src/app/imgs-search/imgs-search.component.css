@@ -1,0 +1,260 @@
+input {
+    transition: all .1s ease;
+    display: inline-block;
+    border-radius: 10px
+}
+
+input:hover {
+    transform: scale(1.01)
+}
+
+.containerImg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center; 
+}
+
+.divPic {
+    display: flex;
+    transition: all .3s ease-out;
+    height: 140px;
+    width:fit-content;
+    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: inherit;
+}
+
+.imgTest {
+    max-width: 500px;
+}
+
+img {
+    border: 1px  solid;
+    border-radius: 10px;
+    border-color: black;
+    height: inherit;
+    width:var(--ratio);
+    animation: imageFade 0.75s ease-in;
+}
+
+.divPic:hover {
+    transform: scale(1.05)
+}
+  
+.divPic > div, .divPic::after {
+    --ratio: calc(var(--w) / var(--h));
+    --row-height: 9rem;
+    width: fit-content;
+    flex-basis: calc(var(--ratio) * var(--row-height)) 
+}
+
+.divPic > div {
+    height: inherit;
+    margin: 0.25rem;
+    flex-grow: calc(var(--ratio) * 100)
+}
+  
+.divPic > a, .divPic::after {
+    --ratio: calc(var(--w) / var(--h));
+    --row-height: 9rem;
+    width: fit-content;
+    flex-basis: calc(var(--ratio) * var(--row-height)) 
+}
+.divPic > a {
+    height: inherit;
+}
+
+.blurrer {
+    background-color: #212121;
+    opacity: 0.5;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.imageScroll {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: calc(100% - 110px);
+    overflow: auto;
+    z-index: 1;
+    padding-top: 10px;
+}
+
+.imageScroll::-webkit-scrollbar {
+    width: 10px;
+    position: relative;
+    left: 5px;
+}
+  
+.imageScroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: 10px;
+}
+  
+.imageScroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #444;
+}
+  
+.imageScroll::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+}
+
+.imageScroll::-webkit-scrollbar-button {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.original {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe.original{
+    width: 100%;
+}
+
+.imgContainer{
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 90%;
+    width: fit-content;
+    max-width: 95%;
+    padding-right: 10px;
+    display: none;
+}
+
+.imgContainer > div:first-child {
+    height: 100%;
+    overflow: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.imgContainer > div::-webkit-scrollbar {
+    width: 10px;
+    position: relative;
+    left: 5px;
+}
+
+.imgContainer > div::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: 10px;
+}
+  
+.imgContainer > div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #444;
+}
+  
+.imgContainer > div::-webkit-scrollbar-thumb:hover {
+    background: #292929;
+}
+
+.imgContainer > div::-webkit-scrollbar-button {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.info {
+    font-weight: 800;
+    color: white;
+    position: relative;
+    top: 20px;
+    left: -70px;
+    background: #505050AA;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    border: 1px solid white;
+    border-radius: 25px;
+    box-shadow: 0 0 10px white;
+    font-size: 22px;
+    transition: all 1s ease-in-out;
+    overflow: auto;
+}
+
+.info:hover {
+    background-color: #505050;
+    box-shadow: 0 0 20px white;
+}
+
+.infoShow{
+    left: 10px;
+    top: 42%;
+    width: 300px;
+    padding: 20px;
+    height: 80%;
+    transform: translateY(-50%) !important;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    overflow: auto;
+}
+
+.infoShow:hover {
+    background-color: #000000AA;  
+}
+
+.owners {
+    display: flex;
+    height: fit-content;
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    left: 45%;    
+    transform: translate(-48%, -50%);
+    transition: all 1s ease-in-out;
+    width: 525px;
+    padding: 10px;
+}
+
+.ownersSlide {
+    transform: translate(-62%, -20%);
+    transition: all 0.5s ease-in-out;
+}
+
+.owners img {
+    animation: imageFade 2s ease-in;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.68, 0.62, 0.35, 1.96);
+    opacity: 0.8;
+    margin: 5px;
+    position: relative;
+    bottom: 0px;
+}
+
+.owners img:hover {
+    z-index: 2;
+    opacity: 1;
+    transform: scale(1.1);
+    bottom: 4px;
+}
+
+@keyframes imageFade {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}
